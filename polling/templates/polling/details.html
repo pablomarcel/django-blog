@@ -1,6 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
+
+{# poll comes from the context in detail_view#}
+
 <h1>{{ poll.title }}</h1>
+
+{# what does the class= do?#}
+{# is this css shenanigans?#}
+
 <div class="poll-body">
     {{ poll.text }}
 </div>
@@ -16,13 +23,3 @@
 </div>
 {% endblock %}
 
-{#<!DOCTYPE html>#}
-{#<html lang="en">#}
-{#<head>#}
-{#    <meta charset="UTF-8">#}
-{#    <title>Title</title>#}
-{#</head>#}
-{#<body>#}
-{##}
-{#</body>#}
-{#</html>#}
