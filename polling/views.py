@@ -1,3 +1,10 @@
+"""
+views
+"""
+
+# pylint: disable=E1101
+# pylint: disable=W0707
+
 from django.shortcuts import render
 
 # Create your views here.
@@ -7,6 +14,9 @@ from polling.models import Poll
 
 
 def list_view(request):
+    """
+    List View
+    """
 
     # gets all the poll objects
 
@@ -16,6 +26,9 @@ def list_view(request):
 
 
 def detail_view(request, poll_id):
+    """
+    Detail View
+    """
     try:
 
         # gets the poll for a particular primary key
