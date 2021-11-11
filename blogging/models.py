@@ -11,6 +11,7 @@ from django.contrib.auth.models import User
 # inherits from the django Model class
 # pylint: disable=E0307
 
+
 class Post(models.Model):
     """
     Post
@@ -25,3 +26,19 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Category(models.Model):
+    """
+    Category
+    """
+
+    name = models.CharField(max_length=128)
+    description = models.TextField(blank=True)
+    posts = models.ManyToManyField(Post, blank=True, related_name="categories")
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name_plural = "Categories"
