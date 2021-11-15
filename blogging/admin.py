@@ -12,11 +12,17 @@ from blogging.models import Category
 
 
 class RefInline(admin.TabularInline):
+    """
+    inline
+    """
     model = Category.posts.through
 
 
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
+    """
+    post admin
+    """
     inlines = [
         RefInline,
     ]
@@ -24,14 +30,8 @@ class PostAdmin(admin.ModelAdmin):
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
-    fields = ('name', 'description')
-    exclude = ('posts',)
-
-
-
-
-
-
-
-
-
+    """
+    category admin
+    """
+    fields = ("name", "description")
+    exclude = ("posts",)
