@@ -27,6 +27,10 @@ SECRET_KEY = 'django-insecure-ty4%gg@2e4b5qfmeln%du4mzk+ok5$apr+%2ahr90h59x&*+=*
 # If to be released, change to False
 DEBUG = True
 
+# ALLOWED_HOSTS = ['dance.gov']
+
+# enter heroku site here
+
 ALLOWED_HOSTS = []
 
 

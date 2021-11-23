@@ -4,17 +4,10 @@
 
 <h1>Polls</h1>
 
-{# polls comes from the context in list_view #}
-
-{% for poll in polls %}
+{% for poll in poll_list %}
 
     <div class="poll">
         <h2>
-
-            {# why do i need poll.pk?#}
-            {# isn't having poll_detail sufficient?#}
-            {# ok. so the poll object gets the pk value from the url#}
-            {# so the anchor actually references an object?#}
 
             <a href="{% url 'poll_detail' poll.pk%}">{{ poll.title }}</a>
 
