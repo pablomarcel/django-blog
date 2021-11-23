@@ -21,29 +21,15 @@ def stub_view(request, *args, **kwargs):
 
 
 class PostListView(ListView):
-    model = Post
+    queryset = Post.objects.exclude(published_date__exact=None).order_by('-published_date')
     template_name = 'list.html'
 
 
-# def list_view(request):
-#     published = Post.objects.exclude(published_date__exact=None)
-#     posts = published.order_by('-published_date')
-#     context = {'posts': posts}
-#     # changed to blogging/list.html and passed,
-#     # then updated settings.py and added blogging/templates/blogging in TEMPLATES DIRS
-#     return render(request, 'list.html', context)
-
-
 class PostDetailView(DetailView):
+    # do i need this?
+    # queryset = Post.objects.exclude(published_date__exact=None)
     model = Post
     template_name = 'blogging/detail.html'
 
 
-# def detail_view(request, post_id):
-#     published = Post.objects.exclude(published_date__exact=None)
-#     try:
-#         post = published.get(pk=post_id)
-#     except Post.DoesNotExist:
-#         raise Http404
-#     context = {'post': post}
-#     return render(request, 'blogging/detail.html', context)
+
