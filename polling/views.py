@@ -37,38 +37,4 @@ class PollDetailView(DetailView):
         return render(request, "polling/details.html", context)
 
 
-# def detail_view(request, poll_id):
-#     """
-#     Detail View
-#     """
-#     try:
-#
-#         # gets the poll for a particular primary key
-#         # so is this reading from the sqlite3 database?
-#
-#         poll = Poll.objects.get(pk=poll_id)
-#
-#     except:
-#
-#         raise Http404
-#
-#     if request.method == "POST":
-#         # name identified
-#         # "vote" is the name of the input button in details.html
-#         if request.POST.get("vote") == "Yes":
-#             poll.score += 1
-#         else:
-#             poll.score -= 1
-#
-#         poll.save()
-#
-#     # the key used in details.html
-#
-#     context = {'poll': poll}
-#
-#     # not to be confused with the url address in the browser
-#     # this represents the html file in the polling directory
-#
-#     return render(request, 'polling/details.html', context)
-#
-#     # return render(request, 'polling/list.html', context)
+

@@ -1,28 +1,3 @@
-{#{% extends "base.html" %}#}
-{#{% block content %}#}
-{##}
-{# poll comes from the context in detail_view#}
-{##}
-{#<h1>{{ poll.title }}</h1>#}
-{##}
-{# what does the class= do?#}
-{# is this css shenanigans?#}
-{##}
-{#<div class="poll-body">#}
-{#    {{ poll.text }}#}
-{#</div>#}
-{#<div class="poll-score">#}
-{#    Current score: {{ poll.score }}#}
-{#</div>#}
-{#<div class="poll-vote">#}
-{#    <form method="POST">#}
-{#        {% csrf_token %}#}
-{#        <input type="submit" name="vote" value="Yes">#}
-{#        <input type="submit" name="vote" value="No">#}
-{#    </form>#}
-{#</div>#}
-{#{% endblock %}#}
-
 {% extends "base.html" %}
 {% block content %}
 
