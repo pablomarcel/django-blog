@@ -9,5 +9,6 @@ class PollingConfig(AppConfig):
     """
     polling Config
     """
-    default_auto_field = 'django.db.models.BigAutoField'
-    name = 'polling'
+
+    default_auto_field = "django.db.models.BigAutoField"
+    name = "polling"
