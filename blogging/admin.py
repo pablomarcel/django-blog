@@ -15,6 +15,7 @@ class RefInline(admin.TabularInline):
     """
     inline
     """
+
     model = Category.posts.through
 
 
@@ -23,6 +24,7 @@ class PostAdmin(admin.ModelAdmin):
     """
     post admin
     """
+
     inlines = [
         RefInline,
     ]
@@ -33,5 +35,6 @@ class CategoryAdmin(admin.ModelAdmin):
     """
     category admin
     """
+
     fields = ("name", "description")
     exclude = ("posts",)

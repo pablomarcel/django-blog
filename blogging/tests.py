@@ -60,6 +60,7 @@ class FrontEndTestCase(TestCase):
     """
     Front End
     """
+
     fixtures = ["blogging_test_fixture.json"]
 
     def setUp(self):
@@ -72,16 +73,14 @@ class FrontEndTestCase(TestCase):
         for count in range(1, 11):
 
             # a case change from P to p leads to a test failure
-            post = Post(title="Post %d Title" % count,
-                        text="foo",
-                        author=author)
+            post = Post(title="Post %d Title" % count, text="foo", author=author)
             if count < 6:
                 pubdate = self.now - self.timedelta * count
                 post.published_date = pubdate
             post.save()
 
     def test_list_only_published(self):
-        resp = self.client.get('/')
+        resp = self.client.get("/")
         # the content of the rendered response is always a bytestring
         resp_text = resp.content.decode(resp.charset)
         self.assertTrue("Recent Posts" in resp_text)
@@ -96,7 +95,7 @@ class FrontEndTestCase(TestCase):
         for count in range(1, 11):
             title = "Post %d Title" % count
             post = Post.objects.get(title=title)
-            resp = self.client.get('/posts/%d/' % post.pk)
+            resp = self.client.get("/posts/%d/" % post.pk)
             if count < 6:
                 self.assertEqual(resp.status_code, 200)
                 self.assertContains(resp, title)
