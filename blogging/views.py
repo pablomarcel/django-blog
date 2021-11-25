@@ -30,6 +30,6 @@ class PostListView(ListView):
 
 class PostDetailView(DetailView):
     # do i need this?
-    # queryset = Post.objects.exclude(published_date__exact=None)
-    model = Post
+    queryset = Post.objects.exclude(published_date__exact=None)
+    # model = Post
     template_name = "blogging/detail.html"
